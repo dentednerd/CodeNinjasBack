@@ -1,18 +1,11 @@
-### Code Ninjas
+# Code Ninjas
 
-Code Ninjas is an web app designed to teach Javascript to kids aged 7+ years.
+Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged 7 years and up. Answer questions and level up to become a fully fledged Code Ninja!
 
-### Objectives
+## Setting up the server
 
-To make learning Javascript fun and interactive
+Install `mongodb-org` [Instructions](https://docs.mongodb.com/manual/administration/install-community/)
 
-### Stages
-
-Answer questions and level up to become a fully fledged ninja
-
-### Setting up
-
-type npm run seed:dev to seed the dev database
-type npm run seed:test to seed the test database
-
-type npm start to fire up the server
+`npm start` to start up the server
+`npm run seed:dev` to seed the dev database
+`npm run seed:test` to seed the test database
