@@ -4,8 +4,10 @@ Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged
 
 ## Setting up the server
 
-Install `mongodb-org` [Instructions](https://docs.mongodb.com/manual/administration/install-community/)
+Install `mongodb-org` ([Instructions](https://docs.mongodb.com/manual/administration/install-community/))
 
 `npm start` to start up the server
+
 `npm run seed:dev` to seed the dev database
+
 `npm run seed:test` to seed the test database
