@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "code-ninjas-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code Ninjas back end in Mongo and Express",
   "main": "index.js",
   "scripts": {
     "test": "mocha spec/*.spec.js",
@@ -11,12 +11,12 @@
     "seed:dev": "node seed/seed.js",
     "seed:test": "NODE_ENV=test node seed/seed.js"
   },
-  "author": "",
+  "author": "Team JSKids (Ash, Joy, Janet and Jo), Northcoders cohort 5 May-Jul 2017",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/northcode-ninjas/server/issues"
+    "url": "https://github.com/dentednerd/CodeNinjasBack/issues"
   },
-  "homepage": "https://github.com/northcode-ninjas/server#readme",
+  "homepage": "https://github.com/dentednerd/CodeNinjasBack#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",

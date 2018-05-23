@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 const app = express();
 const jsonParser = require('body-parser').json;
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 const DB = require('./config')[process.env.NODE_ENV].DB;
 
 mongoose.connect(DB, (err) => {
