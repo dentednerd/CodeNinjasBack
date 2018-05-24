@@ -19,7 +19,6 @@ app.use(jsonParser());
 app.use(cors());
 
 const apiRouter = require('./routes/api');
-app.use('/', "Hello!")
 app.use('/api', apiRouter);
 
 app.listen(PORT, () => {
