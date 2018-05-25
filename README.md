@@ -2,7 +2,7 @@
 
 Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged 7 years and up. Answer questions and level up to become a fully fledged Code Ninja!
 
-## Setting up the server
+## Setting up the server to run locally
 
 1. Install `mongodb-org` ([Instructions](https://docs.mongodb.com/manual/administration/install-community/))
 2. In terminal, run `sudo service mongod start`   
