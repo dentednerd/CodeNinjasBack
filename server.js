@@ -6,7 +6,7 @@ mongoose.Promise = global.Promise;
 const jsonParser = require('body-parser').json;
 
 const port = process.env.PORT || 6006;
-const DB = require('./config').DB;
+const DB = require('./config').dev.DB;
 
 mongoose.connect(DB, (err) => {
     if (err) console.log(`Mongoose could not connect to ${DB}`);
