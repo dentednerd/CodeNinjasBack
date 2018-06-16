@@ -9,8 +9,8 @@ const port = process.env.PORT || 6006;
 const DB = require('./config').dev.DB;
 
 mongoose.connect(DB, (err) => {
-    if (err) console.log(`Mongoose could not connect to ${DB}`);
-    else console.log(`Mongoose successfully connected to ${DB}`);
+  if (err) console.log(`Mongoose could not connect to ${DB}`);
+  else console.log(`Mongoose successfully connected to ${DB}`);
 });
 
 app.set('view engine', 'ejs');
