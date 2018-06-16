@@ -4,11 +4,31 @@ Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged
 
 ## Setting up the server to run locally
 
-1. Install `mongodb-org` ([Instructions](https://docs.mongodb.com/manual/administration/install-community/))
-2. In terminal, run `sudo service mongod start`   
-3. In terminal, run `mongo`  
-4. `npm start` to start up the server   
-`npm run seed:dev` to seed the dev database   
-(If this is your first time setting up, please comment out lines in seed.js containing 'dropCollection')   
-`npm run seed:test` to seed the test database
+Install `mongodb-org` ([Instructions](https://docs.mongodb.com/manual/administration/install-community/))
 
+```bash
+git clone https://github.com/dentednerd/CodeNinjasBack.git
+cd CodeNinjasBack
+sudo service mongod start
+mongo
+npm start
+
+# to seed the dev database:
+npm run seed:dev
+# (If this is your first time setting up,
+# please comment out lines in seed.js containing 'dropCollection')
+
+# to seed the test database
+npm run seed:test
+```
+
+## Deploying the server to Heroku
+
+This assumes you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed, and that you are logged in (`heroku login`), and that you have created the app on your Heroku account.
+
+```bash
+git add .
+git commit -m "Ready to deploy"
+git push heroku master
+heroku open
+```
