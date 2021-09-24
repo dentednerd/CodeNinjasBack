@@ -2,9 +2,12 @@
 
 Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged 7 years and up. Answer questions and level up to become a fully fledged Code Ninja!
 
+## requirements
+
+- [MongoDB Community 5.0](https://docs.mongodb.com/manual/administration/install-community/)
+
 ## Setting up the server to run locally
 
-Install `mongodb-org` ([Instructions](https://docs.mongodb.com/manual/administration/install-community/))
 
 ```bash
 git clone https://github.com/dentednerd/CodeNinjasBack.git

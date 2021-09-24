@@ -4,13 +4,13 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const jsonParser = require('body-parser').json;
+const uri = process.env.MONGODB_URI;
 
 const port = process.env.PORT || 6006;
-const DB = require('./config').dev.DB;
 
-mongoose.connect(DB, (err) => {
-  if (err) console.log(`Mongoose could not connect to ${DB}`);
-  else console.log(`Mongoose successfully connected to ${DB}`);
+mongoose.connect(uri, (err) => {
+  if (err) console.log(`Mongoose could not connect to ${uri}`);
+  else console.log(`Mongoose successfully connected to ${uri}`);
 });
 
 app.set('view engine', 'ejs');
