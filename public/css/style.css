@@ -1,4 +1,4 @@
-/* defaults and resets */ 
+/* defaults and resets */
 
 @font-face {
   font-family: Karate;
@@ -17,6 +17,12 @@
 
 a {
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: red;
+  transition: color 0.2s
 }
 
 /* layout */
