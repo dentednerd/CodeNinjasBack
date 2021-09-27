@@ -1,5 +1,3 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
-
 const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
@@ -7,10 +5,13 @@ const seedUsers = require('./users.seed');
 const seedQuestions = require('./questions.seed');
 const users = require('./data/users');
 const questionSets = require('./data/questions');
+const { MONGODB_URI } = process.env || require('../config');
 
-const DB_URI = require('../config')[process.env.NODE_ENV].DB;
-
-mongoose.connect(DB_URI)
+mongoose.connect(MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(() => {
     return mongoose.connection.db.dropCollection('users');
   })
@@ -19,7 +20,7 @@ mongoose.connect(DB_URI)
     return seedUsers(users);
   })
   .then(results => {
-    return console.log(`Saved ${results.length} users`);
+    return console.log(`Seeded ${results.length} users`);
   })
   .then(() => {
     return mongoose.connection.db.dropCollection('questions');
@@ -29,7 +30,7 @@ mongoose.connect(DB_URI)
     return seedQuestions(questionSets);
   })
   .then(results => {
-    console.log(`Saved ${results.length} questions`);
+    console.log(`Seeded ${results.length} questions`);
   })
   .catch((err) => {
     console.log(err);

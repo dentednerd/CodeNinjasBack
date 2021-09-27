@@ -4,13 +4,13 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const jsonParser = require('body-parser').json;
-const uri = process.env.MONGODB_URI;
+const { MONGODB_URI } = process.env || require('./config');
 
 const port = process.env.PORT || 6006;
 
-mongoose.connect(uri, (err) => {
-  if (err) console.log(`Mongoose could not connect to ${uri}`);
-  else console.log(`Mongoose successfully connected to ${uri}`);
+mongoose.connect(MONGODB_URI, (err) => {
+  if (err) console.log(`Mongoose could not connect to ${MONGODB_URI}`);
+  else console.log(`Mongoose successfully connected to ${MONGODB_URI}`);
 });
 
 app.set('view engine', 'ejs');
@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, () => {
-    console.log(`Code Ninjas server listening on port ${port}`);
+  console.log(`Code Ninjas server listening on port ${port}`);
 });
 
 module.exports = app;

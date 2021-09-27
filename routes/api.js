@@ -2,9 +2,10 @@ const router = require('express').Router();
 const usersRouter = require('./users');
 const questionsRouter = require('./questions');
 const updateUser = require('./users');
+const endpoints = require('../endpoints.json');
 
 router.get('/', (req, res) => {
-    res.status(200).json('All good');
+    res.status(200).send({ endpoints });
 });
 
 router.use('/users', usersRouter);

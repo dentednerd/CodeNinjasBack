@@ -1,12 +1,10 @@
 process.env.NODE_ENV = 'test';
 const { expect } = require('chai');
 const request = require('supertest');
-const server = require('../index');
+const server = require('../server');
 const mongoose = require('mongoose');
 const data = require('../seed/data/users');
-// const config = require('../config');
 const saveTestData = require('../seed/users.seed');
-// const db = config.DB[process.env.NODE_ENV] || process.env.DB;
 
 describe('API Routes', function () {
   beforeEach(done => {
@@ -17,8 +15,9 @@ describe('API Routes', function () {
       );
   });
   after(done => {
-    mongoose.connection.close();
-    done();
+    mongoose.connection.close()
+      .then(() => done())
+      .catch((err) => done(err));
   });
 });
 
