@@ -15,6 +15,17 @@
         }
     ]
   },
+  "GET /api/users/:username": {
+    "description": "returns a user object for a given username",
+    "exampleResponse": {
+      "_id": "6151aa43c7e062678f2c0924",
+      "username": "loneninja0",
+      "email": "loneninja0@gmail.com",
+      "avatar_url": "http://img10.deviantart.net/b7ea/i/2015/104/d/f/lucy_ninja_by_waynemountan-d8isffj.png",
+      "level": 0,
+      "__v": 0
+      }
+  },
   "GET /api/levels/:level/questions": {
     "description": "serves an array of questions for a given level",
     "exampleResponse": [
