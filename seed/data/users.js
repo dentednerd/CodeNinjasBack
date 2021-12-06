@@ -1,12 +1,14 @@
-const {range} = require('underscore');
-
-const users = range(3).map((num) => {
-    return {
-        username: `loneninja${num}`,
-        email: `loneninja${num}@gmail.com`,
-        avatar_url: 'http://img10.deviantart.net/b7ea/i/2015/104/d/f/lucy_ninja_by_waynemountan-d8isffj.png',
-        level: 0
-    };
-});
-
-module.exports = users;
+module.exports = [
+  {
+    name: 'Brian',
+    level: 0,
+    username: 'ninjabrian',
+    avatar: 'https://pbs.twimg.com/media/BI97ZrOCAAEmd0c.jpg'
+  },
+  {
+    name: 'Danny',
+    level: 0,
+    username: 'dannydontyouknow',
+    avatar: 'https://pbs.twimg.com/profile_images/768900258160050177/9dKV9-AV_400x400.jpg'
+  }
+];

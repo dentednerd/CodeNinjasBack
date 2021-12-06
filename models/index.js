@@ -15,3 +15,15 @@ exports.fetchQuestions = (level) => {
     }
   );
 };
+
+exports.fetchUserByUsername = (username) => {
+  return db
+    .collection('users')
+    .doc(username)
+    .get()
+    .then((snapshot) => {
+      const user = snapshot.data();
+      return user;
+    }
+  );
+};

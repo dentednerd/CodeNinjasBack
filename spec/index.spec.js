@@ -33,3 +33,18 @@ describe('GET /api/levels/:level/questions', function () {
     });
   });
 });
+
+describe('GET /api/users/:username', function () {
+  it('should return a user object for a given username', function (done) {
+    request(app)
+    .get('/api/users/ninjabrian')
+    .expect(200)
+    .end((err, res) => {
+      if (err) done(err);
+      else {
+        expect(res.body.user.username).to.equal('ninjabrian');
+        done();
+      }
+    });
+  });
+});

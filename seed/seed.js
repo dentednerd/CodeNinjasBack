@@ -1,5 +1,6 @@
 const { db } = require('../db');
 const questionsData = require('./data/questions');
+const usersData = require('./data/users');
 
 questionsData.forEach((question) => {
   const questionData = {
@@ -16,4 +17,11 @@ questionsData.forEach((question) => {
     .collection('questions')
     .doc(`${question.questionNumber}`)
     .set(questionData);
+});
+
+usersData.forEach((user) => {
+  return db
+  .collection('users')
+  .doc(`${user.username}`)
+  .set(user);
 });
