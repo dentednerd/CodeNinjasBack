@@ -1,13 +1,8 @@
-const router = require('express').Router();
-const {Questions} = require('../models/models');
+const questionsRouter = require('express').Router();
+const { getQuestions } = require('../controllers');
 
-router.get('/:level/questions', (req, res, next) => {
-    const {level} = req.params;
-    Questions.find({level}).sort('questionNumber')
-    .then((questions) => {
-        return res.status(200).json({questions});
-    })
-    .catch(next);
-});
+questionsRouter
+  .route('/:level/questions')
+  .get(getQuestions);
 
-module.exports = router;
+module.exports = questionsRouter;

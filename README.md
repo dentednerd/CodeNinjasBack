@@ -4,7 +4,8 @@ Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged
 
 ## requirements
 
-- [MongoDB Community 5.0](https://docs.mongodb.com/manual/administration/install-community/)
+- [Google Application Credentials](https://firebase.google.com/docs/admin/setup)
+- [Firebase CLI  (recommended)](https://firebase.google.com/docs/cli)
 
 ## Setting up the server to run locally
 
@@ -12,8 +13,6 @@ Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged
 ```bash
 git clone https://github.com/dentednerd/CodeNinjasBack.git
 cd CodeNinjasBack
-sudo service mongod start
-mongo
 npm start
 
 # to seed the dev database:

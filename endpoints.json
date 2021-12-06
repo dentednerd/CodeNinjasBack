@@ -2,30 +2,6 @@
   "GET /api": {
     "description": "serves a JSON representation of all the available endpoints of this API"
   },
-  "GET /api/users": {
-    "description": "serves an array of all users",
-    "exampleResponse": [
-      {
-        "_id": "6151aa43c7e062678f2c0924",
-        "username": "loneninja0",
-        "email": "loneninja0@gmail.com",
-        "avatar_url": "http://img10.deviantart.net/b7ea/i/2015/104/d/f/lucy_ninja_by_waynemountan-d8isffj.png",
-        "level": 0,
-        "__v": 0
-        }
-    ]
-  },
-  "GET /api/users/:username": {
-    "description": "returns a user object for a given username",
-    "exampleResponse": {
-      "_id": "6151aa43c7e062678f2c0924",
-      "username": "loneninja0",
-      "email": "loneninja0@gmail.com",
-      "avatar_url": "http://img10.deviantart.net/b7ea/i/2015/104/d/f/lucy_ninja_by_waynemountan-d8isffj.png",
-      "level": 0,
-      "__v": 0
-      }
-  },
   "GET /api/levels/:level/questions": {
     "description": "serves an array of questions for a given level",
     "exampleResponse": [
@@ -36,15 +12,11 @@
         "let pet",
         "let horse"
         ],
-        "_id": "6151aa43c7e062678f2c092f",
         "title": "What's a variable?",
         "background": "In JavaScript, as a program runs, it needs to hold information in its memory. A variable is like a box, that allows us to store information. Every variable needs a name.",
         "example": "To create a variable called 'dog', we write 'let dog'.",
         "question": "How would you declare a variable called 'samurai'?",
-        "correct": "let samurai",
-        "level": 1,
-        "questionNumber": 0,
-        "__v": 0
+        "correct": "let samurai"
         }
     ]
   }
