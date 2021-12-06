@@ -9,7 +9,7 @@ exports.fetchQuestions = (level) => {
     .then((snapshot) => {
       const questions = [];
       snapshot.docs.forEach((doc) => {
-        questions.push(doc._fieldsProto);
+        questions.push(Object.assign({}, doc.data(), { id: doc.id }));
       });
       return questions;
     }
