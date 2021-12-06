@@ -8,9 +8,8 @@
     "lint": "eslint ./ --fix",
     "posttest": "npm run lint",
     "start": "node app.js",
-    "seed:dev": "node seed/seed.js",
-    "seed:test": "NODE_ENV=test node seed/seed.js",
-    "seed": "node seed/seed.js"
+    "seed": "node seed/seed.js",
+    "dev": "nodemon app.js"
   },
   "author": "Team JSKids (Ash, Joy, Janet and Jo), Northcoders cohort 5 May-Jul 2017",
   "license": "ISC",

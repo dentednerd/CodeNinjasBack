@@ -1,9 +1,13 @@
+require('dotenv').config();
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
-const serviceAccount = require('./code-ninjas-3-firebase-adminsdk-68gkr-55153dda98.json');
 
 const firebaseConfig = {
-  credential: cert(serviceAccount)
+  credential: cert({
+    'projectId': process.env.FIREBASE_PROJECT_ID,
+    'private_key': process.env.FIREBASE_PRIVATE_KEY,
+    'client_email': process.env.FIREBASE_CLIENT_EMAIL,
+  })
 };
 
 initializeApp(firebaseConfig);
