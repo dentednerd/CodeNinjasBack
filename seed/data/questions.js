@@ -2,7 +2,7 @@ module.exports = [
     {
         title: 'What\'s a string?',
         background: 'In JavaScript, we call a sentence or word a string. Strings need to have quote marks around them.',
-        example: '"I am a string.", \'I am also a string.\', But I am not a string. ',
+        example: '"I am a string."\n\'I am also a string.\'\nBut I am not a string. ',
         question: 'Find the string!',
         answers: ['"Ninjas"', 34, 'true', 'name'],
         correct: '"Ninjas"',
@@ -12,7 +12,7 @@ module.exports = [
     {
         title: 'What\'s an integer?',
         background: 'In JavaScript, we call whole numbers integers.',
-        example: ' 10, 27, 403, 64, 3845 ',
+        example: ' 10\n27\n403\n64\n3845 ',
         question: 'Find the number!',
         answers: ['"Ninjas"', 34, 'true', 'name'],
         correct: 34,
@@ -28,14 +28,14 @@ module.exports = [
         correct: 'true',
         level: 0,
         questionNumber: 2
-        
+
     },
     {
         title: 'What\'s a comment?',
         background: 'In JavaScript, comments are notes you can write to tell other people what is going on in your code. We write comments with single line comments with //, and multi line comments like this: /* The comment you have written goes here. */ ',
-        example: '// This is a one-line comment. /* This is a comment on more than one line. */',
+        example: '// This is a one-line comment.\n/* This is a comment on\nmore than one line. */',
         question: 'Find the one-line comment!',
-        answers: ['// karate chop', '/* high kick */', '/ dojo', '/ Kung Fu/'],
+        answers: ['// karate chop', '/* high\nkick */', '/ dojo', '/ Kung Fu/'],
         correct: '// karate chop',
         level: 0,
         questionNumber: 3
@@ -43,7 +43,7 @@ module.exports = [
     {
         title: 'What\'s camel case?',
         background: 'In JavaScript, we have to give names to things sometimes. When names are made up of more than one word, we write the name in camel case. This means that the first word is all in lowercase, and the first letter of the next word is a capital letter.',
-        example: 'karateChop, myBirthday, masterOfInvisibility',
+        example: 'karateChop\nmyBirthday\nmasterOfInvisibility',
         question: 'Find the name written in camel case!',
         answers: ['Shadowhunter', 'ShadowWarrior', 'nightWarrior', 'mastersamurai'],
         correct: 'nightWarrior',
@@ -52,8 +52,8 @@ module.exports = [
     },
     {
         title: 'What\'s a variable?',
-        background: 'In JavaScript, as a program runs, it needs to hold information in its memory. A variable is like a box, that allows us to store information. Every variable needs a name.',
-        example: 'To create a variable called \'dog\', we write \'let dog\'.',
+        background: 'In JavaScript, as a program runs, it needs to hold information in its memory. A variable is like a box, that allows us to store information. Every variable needs three parts: a keyword to tell us what kind of variable it is, a name, and a value.',
+        example: 'To create a variable called \'dog\' with the value \'Spot\', we write \'let dog\' = \'Spot\'.',
         question: 'How would you declare a variable called \'samurai\'?',
         answers: ['let samurai', 'let = samurai', 'let pet', 'let horse'],
         correct: 'let samurai',
@@ -73,7 +73,7 @@ module.exports = [
     {
         title: 'What\'s a prompt?',
         background: 'In JavaScript, when we need information from the person using our program, we give the person a prompt. The prompt takes the information that the user gives us, and puts it into a variable.',
-        example: 'Let\'s say we want our user to choose a samurai weapon. We use a prompt like this: \'let samuraiChoice = prompt("Do you choose Katana, Daisho or Tanto?")\'',
+        example: 'let samuraiChoice = prompt("Do you choose Katana, Daisho or Tanto?")',
         question: 'Which line of code will prompt the ninja to choose a weapon?',
         answers: ['let ninjaChoice = prompt("Do you choose Nunchucks, Shuriken or Origami?")','let prompt = ("Do you choose Nunchucks, Shuriken or Origami?")','let ninjaChoice = Nunchucks, Shuriken or Origami','ninjaChoice = prom("Do you choose Nunchucks, Shuriken or Origami?")'],
         correct: 'let ninjaChoice = prompt("Do you choose Nunchucks, Shuriken or Origami?")',
@@ -83,7 +83,7 @@ module.exports = [
     {
         title: 'Maths in JavaScript',
         background: 'In JavaScript, we can do maths in our programs. We use + to add, and - to subtract, just like we normally do in maths. But we can\'t use x to multiply! We use * to multiply instead, and to divide, we use / .',
-        example: '\'let answer = 22 - 12\' would give the \'answer\' variable a value of 10. \'let answer2 = 16 + 18\' would give \'answer2\' a value of 34. \'let answer3 = 5 * 4\' would give \'answer3\' a value of 20. \'let answer4 = 15 / 3\' would give answer4 a value of 5.',
+        example: 'let answer = 22 - 12; // answer === 10\nlet answer2 = 16 + 18; // answer2 === 34.\nlet answer3 = 5 * 4; // answer3 === 20.\nlet answer4 = 15 / 3; // answer4 === 5.',
         question: 'Which variable has a value of 18?',
         answers: ['let answer = 28 + 14', 'let answer = 33 - 25', 'let answer = 9 * 2', 'let answer = 20 / 5'],
         correct: 'let answer = 9 * 2',
@@ -103,7 +103,7 @@ module.exports = [
     {
         title: 'Less than',
         background: 'In JavaScript, we can use the less than sign - < - to show that a variable is less than another number.',
-        example: 'If we had fewer than three nunchucks, we would write \'nunchucks < 3\'',
+        example: 'nunchucks < 3',
         question: 'Which statement would show that there are fewer than 10 stars?',
         answers: ['let stars = Math.random()', 'stars > 10', 'stars = 10', 'stars < 10'],
         correct: 'stars < 10',
@@ -113,7 +113,7 @@ module.exports = [
     {
         title: 'Greater than',
         background: 'In JavaScript, we can use the greater than sign - > - to show that a variable is more than another number.',
-        example: 'If we had more than 7 sensei, we would write \'sensei > 7\'.',
+        example: 'sensei > 7',
         question: 'Which statement would show that there are more than 7 shuriken?',
         answers: ['let shuriken = 2 > 5', 'shuriken > 10', 'shuriken > 7', 'shuriken = 8'],
         correct: 'shuriken > 7',
@@ -123,7 +123,7 @@ module.exports = [
     {
         title: '...or equal to',
         background: 'In JavaScript, we can use <= to show that a variable is either less than or equal to another number. Also, we can use >= to show that a variable is either greater than or equal to another number.',
-        example: 'If we have six or less lotus flowers, we write \'lotusFlowers >= 6\'. If we have at least twelve katana, we write \'katana <= 12\'.',
+        example: 'lotusFlowers >= 6\nkatana <= 12',
         question: 'Select the answer that shows that a is greater than or equal to b?',
         answers: ['a >= b', 'a < b', 'a <= b', 'a > b'],
         correct: 'a >= b',
@@ -133,7 +133,7 @@ module.exports = [
     {
         title: 'Equality Sign',
         background: 'In JavaScript, if we want to find out whether two variables or values are equal, we use three equals signs in a row like this: \'===\'. ',
-        example: '\'3 === 3\' is correct, but \'3 === \'3\'\' would not be correcy. Remember anything in quote marks is a string, and strings are not the same as numbers.',
+        example: '\'3 === 3\' is true, but \'3 === \'3\'\' is false.\n// Remember anything in quote marks is a string, and strings are not the same as numbers.',
         question: 'Which line of code shows that 7 is equal to 7?',
         answers: ['7 equals 7', '7 === 7', '7 = 7', '7 === \'7\''],
         correct: '7 === 7',
@@ -153,21 +153,21 @@ module.exports = [
     {
         title: 'If statements',
         background: 'In JavaScript, we can choose to make a line of code work only if the first part of the line is correct. The first part of the line is what we call an if statement.',
-        example: 'Look at this line: \'if (choice < 3) { enemyChoice = nunchucks }\'. \'enemyChoice\' will only be \'nunchucks\' if \'choice\' is smaller than 3.',
+        example: 'if (choice < 3) {\nenemyChoice = nunchucks\n}\n\n// \'enemyChoice\' will only be \'nunchucks\' if \'choice\' is smaller than 3.',
         question: 'Which statement would make \'enemyChoice\' a star when \'choice\' is less than 10?',
-        answers: ['if (choice > 10) { enemyChoice = star }', 'if (choice < 10) { enemyChoice = nunchucks }', 'if (choice < 20) { enemyChoice = star }', 'if (choice < 10) { enemyChoice = star }'],
-        correct: 'if (choice < 10) { enemyChoice = star }',
+        answers: ['if (choice > 10) {\nenemyChoice = star\n}', 'if (choice < 10) {\nenemyChoice = nunchucks\n}', 'if (choice < 20) {\nenemyChoice = star\n}', 'if (choice < 10) {\nenemyChoice = star\n}'],
+        correct: 'if (choice < 10) {\nenemyChoice = star\n}',
         level: 3,
         questionNumber: 0
     },
     {
         title: 'If-Else statements',
         background: 'We have just learned how to use if statements to make a line of code work only when the first part is true. But what if the first part isn\'t true, and we want to run another line of code instead? We use an else statement straight after the if statement.',
-        example: 'if (choice < 3) { enemyChoice = nunchucks } else { enemyChoice = origami } means that enemyChoice will be \'origami\' if \'choice\' is 3 or higher.',
+        example: 'if (choice < 3) {\nenemyChoice = nunchucks\n} else {\nenemyChoice = origami\n}\n\n//  enemyChoice will be \'origami\' if \'choice\' is 3 or higher.',
         question: 'Which statement would make \'enemyChoice\' a shuriken when \'choice\' is 16?',
-        answers: ['if (choice < 3) { enemyChoice = shuriken } else { enemyChoice = origami }', 'if (choice > 9) { enemyChoice = nunchucks } else { enemyChoice = shuriken }', 
-                'if (choice < 15) { enemyChoice = nunchucks } else { enemyChoice = shuriken }', 'if (choice <= 15) { enemyChoice = shuriken } else { enemyChoice = origami }'],
-        correct: 'if (choice < 15) { enemyChoice = nunchucks } else { enemyChoice = shuriken }',
+        answers: ['if (choice < 3) {\nenemyChoice = shuriken\n} else {\nenemyChoice = origami\n}', 'if (choice > 9) {\nenemyChoice = nunchucks\n} else {\nenemyChoice = shuriken\n}',
+        'if (choice < 15) {\nenemyChoice = nunchucks\n} else {\nenemyChoice = shuriken\n}', 'if (choice <= 15) {\nenemyChoice = shuriken\n} else {\nenemyChoice = origami\n}'],
+        correct: 'if (choice < 15) {\nenemyChoice = nunchucks\n} else {\nenemyChoice = shuriken\n}',
         level: 3,
         questionNumber: 1
     },
@@ -176,7 +176,7 @@ module.exports = [
         background: 'Let\'s try another if-else statement.',
         example: 'if (choice > 6) { enemyChoice = nunchucks } else { enemyChoice = origami }',
         question: 'Which statement would make the enemy choose origami when they have a value of 4?',
-        answers: ['if (choice > 5) { enemyChoice = shuriken } else { enemyChoice = origami }', 'if (choice > 9) { enemyChoice = nunchucks } else { enemyChoice = shuriken }', 
+        answers: ['if (choice > 5) { enemyChoice = shuriken } else { enemyChoice = origami }', 'if (choice > 9) { enemyChoice = nunchucks } else { enemyChoice = shuriken }',
                 'if (choice < 15) { enemyChoice = nunchucks } else { enemyChoice = shuriken }', 'if (choice <= 15) { enemyChoice = shuriken } else { enemyChoice = origami }'],
         correct: 'if (choice > 5) { enemyChoice = shuriken } else { enemyChoice = origami }',
         level: 3,
@@ -185,9 +185,9 @@ module.exports = [
     {
         title: 'Even more If-Else statements',
         background: 'Let\'s try another if-else statement.',
-        example: 'if (choice = true) { enemyChoice = nunchucks } else { enemyChoice = origami }',
+        example: 'if (choice = true) {\nenemyChoice = nunchucks\n} else {\nenemyChoice = origami\n}',
         question: 'Which statement would make you a ninja?',
-        answers: ['if (ninjaLevel = true) { status = ninja } else { status = ninjaInTraining }', 'if (ninjaLevel = false) { status = ninja } else { status = ninjaInTraining }', 
+        answers: ['if (ninjaLevel = true) { status = ninja } else { status = ninjaInTraining }', 'if (ninjaLevel = false) { status = ninja } else { status = ninjaInTraining }',
                 'if (ninjaLevel = true) { status = ninjaInTraining } else { status = ninja }', 'if (ninjaLevel = false) { status is ninja } else { status is not a ninja }'],
         correct: 'if (ninjaLevel = true) { status = ninja } else { status = ninjaInTraining }',
         level: 3,
@@ -198,7 +198,7 @@ module.exports = [
         background: 'If-Else statements can be linked together, so that you can give your program more outcomes, by using \'else if\' instead of just \'else\'.',
         example: 'if (ninjaLevel = "Academy") { colour = "white" } else if ( ninjaLevel = "Gennin" ) { colour = "Yellow" } else if ( ninjaLevel = "Chunnin" ) { colour = "Orange" } else { colour = "Working towards black belt" }',
         question: 'How would we get a tiny clan if there are fewer than 5 ninjas, a small clan if there are less than 10 ninjas, a medium clan if there are fewer than 15 ninjas and a large clan if there are more?',
-        answers: ['if (ninjaNum < 5) { clan = "tiny" } else if ( ninjaNum < 10 ) { clan = "small" } else if ( ninjaNum < 15 ) { clan = "medium" } else { clan = "large" }', 
+        answers: ['if (ninjaNum < 5) { clan = "tiny" } else if ( ninjaNum < 10 ) { clan = "small" } else if ( ninjaNum < 15 ) { clan = "medium" } else { clan = "large" }',
         'if (ninjaNum = 2) { clan = "tiny" } else if ( ninjaNum < 8 ) { clan = "small" } else if ( ninjaNum < 12 ) { clan = "medium" } else { clan = "large" }',
         'if (ninjaNum > 10) { clan = "tiny" } else if ( ninjaNum < 18 ) { clan = "small" } else if ( ninjaNum < 12 ) { clan = "medium" } else { clan = "massive" }',
         'if (ninjaNum = 12) { clan = "tiny" } else if ( ninjaNum < 10 ) { clan = "small" } else if ( ninjaNum < 19 ) { clan = "medium" } else { clan = "large" }',],
@@ -441,7 +441,7 @@ module.exports = [
         background: 'Can you cast your mind back to If Else Statements?',
         example: 'Remember your Jounin training!',
         question: 'Which statement would make ninjaChoice be shuriken when they have a value of 7?',
-        answers: ['if (choice > 5) { ninjaChoice = shuriken } else { enemyChoice = origami }', 'if (choice > 9) { ninjaChoice = nunchucks } else { ninjaChoice = shuriken }', 
+        answers: ['if (choice > 5) { ninjaChoice = shuriken } else { enemyChoice = origami }', 'if (choice > 9) { ninjaChoice = nunchucks } else { ninjaChoice = shuriken }',
                 'if (choice < 15) { ninjaChoice = nunchucks } else { ninjaChoice = shuriken }', 'if (choice <= 15) { ninjaChoice = nunchucks } else { ninjaChoice = origami }'],
         correct: 'if (choice > 9) { ninjaChoice = nunchucks } else { ninjaChoice = shuriken }',
         level: 8,
