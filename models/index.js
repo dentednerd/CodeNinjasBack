@@ -27,3 +27,23 @@ exports.fetchUserByUsername = (username) => {
     }
   );
 };
+
+exports.updateUser = async (username) => {
+  const userRef = db.collection('users').doc(username);
+
+  const currentUser = await userRef.get()
+    .then((snapshot) => {
+      const user = snapshot.data();
+      return user;
+    });
+  const updatedUser = Object.assign({}, currentUser, { level: currentUser.level + 1 });
+  userRef.set(updatedUser);
+
+  const newUser = await userRef.get()
+  .then((snapshot) => {
+    const user = snapshot.data();
+    return user;
+  });
+
+  return newUser;
+};

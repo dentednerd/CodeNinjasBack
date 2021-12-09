@@ -1,8 +1,9 @@
 const usersRouter = require('express').Router();
-const { getUserByUsername } = require('../controllers');
+const { getUserByUsername, patchUser } = require('../controllers');
 
 usersRouter
   .route('/:username')
-  .get(getUserByUsername);
+  .get(getUserByUsername)
+  .patch(patchUser);
 
 module.exports = usersRouter;
