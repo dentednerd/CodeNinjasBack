@@ -2,36 +2,24 @@
 
 Code Ninjas is an interactive web app, designed to teach JavaScript to kids aged 7 years and up. Answer questions and level up to become a fully fledged Code Ninja!
 
+A RESTful API with a Mongo database.
+
+[https://codeninjas-api.fly.dev/](https://codeninjas-api.fly.dev/)
+
 ## requirements
 
-- [Google Application Credentials](https://firebase.google.com/docs/admin/setup)
-- [Firebase CLI  (recommended)](https://firebase.google.com/docs/cli)
+- Node v14.17.4: [download](https://nodejs.org/)
+- Docker 24.0.6: [download](https://www.docker.com/)
+- flyctl: [download](https://fly.io/docs/hands-on/install-flyctl/)
+- credentials for local development (note to self: check your vault xoxo)
 
-## Setting up the server to run locally
+## Installation
 
-```sh
+```bash
 git clone https://github.com/dentednerd/CodeNinjasBack.git
 cd CodeNinjasBack
+npm i
 npm run dev
 ```
 
-## Seeding the Firestore database
-
-```sh
-npm run seed
-````
-
-## Deploying the server to Heroku
-
-This assumes you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed, and that you are logged in (`heroku login`), and that you have created the app on your Heroku account.
-
-```bash
-git add .
-git commit -m "Ready to deploy"
-git push heroku main
-heroku open
-```
-
-## Notes
-
-- Recently migrated from MongoDB to Firestore.
+Database is hosted on MongoDB Atlas and should only need reseeding after a major data change.

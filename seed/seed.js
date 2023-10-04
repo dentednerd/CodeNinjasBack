@@ -1,27 +1,42 @@
-const { db } = require('../db');
-const questionsData = require('./data/questions');
-const usersData = require('./data/users');
+const mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
-questionsData.forEach((question) => {
-  const questionData = {
-    title: question.title,
-    background: question.background,
-    example: question.example,
-    question: question.question,
-    answers: question.answers,
-    correct: question.correct
-  };
-  return db
-    .collection('levels')
-    .doc(`${question.level}`)
-    .collection('questions')
-    .doc(`${question.questionNumber}`)
-    .set(questionData);
-});
+const seedUsers = require('./users.seed');
+const seedQuestions = require('./questions.seed');
+const users = require('./data/users');
+const questionSets = require('./data/questions');
+const { MONGODB_URI } = require('../config');
 
-usersData.forEach((user) => {
-  return db
-  .collection('users')
-  .doc(`${user.username}`)
-  .set(user);
-});
+mongoose.connect(MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    mongoose.connection.db.listCollections().toArray((err, names) => {
+      if (err) {
+        console.log(err);
+      } else {
+        for (let i = 0; i < names.length; i++) {
+          mongoose.connection.db.dropCollection(names[i].name, () => {
+            console.log(`Dropped ${names[i].name} collection.`);
+          });
+        }
+      }
+    });
+  })
+  .then(() => {
+    return seedUsers(users);
+  })
+  .then(() => {
+    return seedQuestions(questionSets);
+  })
+  .then(() => {
+    console.log('Seeding complete!');
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .then(() => {
+    return mongoose.connection.close();
+  });
