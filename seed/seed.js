@@ -5,7 +5,9 @@ const seedUsers = require('./users.seed');
 const seedQuestions = require('./questions.seed');
 const users = require('./data/users');
 const questionSets = require('./data/questions');
-const { MONGODB_URI } = process.env || require('../config');
+const { MONGODB_URI } = require('../config');
+
+console.log({ MONGODB_URI });
 
 mongoose.connect(MONGODB_URI,
   {
@@ -13,24 +15,26 @@ mongoose.connect(MONGODB_URI,
     useUnifiedTopology: true
   })
   .then(() => {
-    return mongoose.connection.db.dropCollection('users');
+    mongoose.connection.db.listCollections().toArray((err, names) => {
+      if (err) {
+        console.log(err);
+      } else {
+        for (let i = 0; i < names.length; i++) {
+          mongoose.connection.db.dropCollection(names[i].name, () => {
+            console.log(`Dropped ${names[i].name} collection.`);
+          });
+        }
+      }
+    });
   })
   .then(() => {
-    console.log('Dropped users collection');
     return seedUsers(users);
   })
-  .then(results => {
-    return console.log(`Seeded ${results.length} users`);
-  })
   .then(() => {
-    return mongoose.connection.db.dropCollection('questions');
-  })
-  .then(() => {
-    console.log('Dropped questions collection');
     return seedQuestions(questionSets);
   })
-  .then(results => {
-    console.log(`Seeded ${results.length} questions`);
+  .then(() => {
+    console.log('Seeding complete!');
   })
   .catch((err) => {
     console.log(err);
