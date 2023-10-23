@@ -19,5 +19,25 @@
         "correct": "let samurai"
         }
     ]
+  },
+  "GET /api/users": {
+    "description": "serves an array of all users",
+    "exampleResponse": [
+      {
+        "username": "ninjabrian",
+        "name": "Brian",
+        "level": 0,
+        "avatar": "https://pbs.twimg.com/media/BI97ZrOCAAEmd0c.jpg"
+      }
+    ]
+  },
+  "GET /api/users/:username": {
+    "description": "serves a user object for a given username",
+    "exampleResponse": {
+      "username": "ninjabrian",
+      "name": "Brian",
+      "level": 0,
+      "avatar": "https://pbs.twimg.com/media/BI97ZrOCAAEmd0c.jpg"
+    }
   }
 }
