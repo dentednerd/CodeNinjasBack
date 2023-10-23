@@ -29,9 +29,13 @@ mongoose.connect(MONGODB_URI,
     return seedUsers(users);
   })
   .then(() => {
+    console.log('Users collection seeded.');
+  })
+  .then(() => {
     return seedQuestions(questionSets);
   })
   .then(() => {
+    console.log('Questions collection seeded.');
     console.log('Seeding complete!');
   })
   .catch((err) => {
