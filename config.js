@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { MONGODB_USERNAME, MONGODB_PASSWORD } = process.env;
 
 module.exports = {

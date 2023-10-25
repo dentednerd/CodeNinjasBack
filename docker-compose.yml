@@ -6,7 +6,7 @@ services:
     container_name: codeninjas-server
     build: .
     ports:
-      - 3000:3000
+      - 6000:6000
     restart: always
     environment:
       MONGODB_USERNAME=${MONGODB_USERNAME}
